@@ -1,0 +1,14 @@
+management:
+  security:
+    enabled: false
+security:
+  basic:
+    enabled: false
+    ignored: /**
+spring:
+  application:
+    name: firstMicroservice
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_HOST:http://localhost:8001/eureka/}

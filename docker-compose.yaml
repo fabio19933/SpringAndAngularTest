@@ -1,0 +1,40 @@
+version: "3"
+services:
+  firstMicroservice:
+    image: first
+    environment:
+      - EUREKA_HOST=http://eureka:8001/eureka/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka
+    networks:
+      - network-example
+ 
+  secondMicroservice:
+    image: second
+    environment:
+      - EUREKA_HOST=http://eureka:8001/eureka/
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka
+    networks:
+      - network-example 
+      
+  frontEndMicro:
+    image: front-end-micro
+    ports:
+      - "80:80"
+    networks:
+      - network-example
+      
+  eureka:
+    image: eureka
+    ports:
+      - "8001:8001"
+    networks:
+      - network-example
+
+networks:
+  network-example:
