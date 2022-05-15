@@ -4,6 +4,7 @@ services:
     image: first
     environment:
       - EUREKA_HOST=http://eureka:8001/eureka/
+      - FEIGN_HOST_SECOND_MICROSERVICE=secondMicroservice:8081
     ports:
       - "8080:8080"
     depends_on:

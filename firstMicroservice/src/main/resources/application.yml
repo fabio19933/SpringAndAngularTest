@@ -12,3 +12,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_HOST:http://localhost:8001/eureka/}
+secondMicroservice:
+  ribbon:
+    listOfServers: ${FEIGN_HOST_SECOND_MICROSERVICE:localhost:8081}
+
